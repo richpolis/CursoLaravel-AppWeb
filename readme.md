@@ -1,3 +1,9 @@
+## AppWeb
+
+Para instalar la aplicación necesitas [Composer](http://getcomposer.org/). Una vez lo tienes instalado, entras en la carpeta de la app y escribes **composer install** en el terminal y se te instalarán todas las dependencias.
+
+Este repositorio ha sido usado para el [vídeo](http://www.youtube.com/watch?v=ajiAJf-rT0s&feature=youtu.be)
+
 ## Laravel PHP Framework
 
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
