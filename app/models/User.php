@@ -20,9 +20,9 @@ class User extends Eloquent {
 			return false;
 	}
 
-	public function posts()
+	/*public function posts()
 	{
 		return $this->hasMany('Post');
-	}
+	}*/
 
 }

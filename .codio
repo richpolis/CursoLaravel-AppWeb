@@ -1,0 +1,17 @@
+{
+// Configure your Run and Preview buttons here.
+
+// Run button configuration
+  "commands": {
+	    "Start servers": "parts start apache2 mysql",
+        "Restart servers": "parts restart apache2 mysql",
+        "Stop servers": "parts stop apache2 mysql",
+        "Node version": "node --version"
+  },
+
+// Preview button configuration
+  "preview": {
+        "Frontend URL": "http://{{domain}}:3000/",
+	  "PhpMyAdmin URL": "http://{{domain}}:3000/phpmyadmin"
+  }
+}

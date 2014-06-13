@@ -3,8 +3,13 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
+	"require-dev": {
+		"way/generators": "2.*",
+		"fzaninotto/faker": "v1.3.0",
+		"twitter/bootstrap": "v3.0.0"
+	},
 	"require": {
-		"laravel/framework": "4.0.*"
+		"laravel/framework": "4.1.*"
 	},
 	"autoload": {
 		"classmap": [
