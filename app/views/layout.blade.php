@@ -11,11 +11,10 @@
     <title>Jumbotron Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ path('packages/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{asset('packages/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- Custom styles for this template -->
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -50,22 +49,19 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
-
-    <div class="container">
+	
+	@yield('contenido')
       
-
-      <hr>
-
+    <div class="container">
+    	<hr>
       <footer>
         <p>&copy; Company 2014</p>
-      </footer>
-    </div> <!-- /container -->
-
-
+      </footer>    
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="{{ path('packages/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('packages/bootstrap/js/bootstrap.min.js')}}"></script>
   </body>
 </html>
