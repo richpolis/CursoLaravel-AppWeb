@@ -1,6 +1,8 @@
 <?php
 
-class User extends Eloquent {
+namespace Richpolis\Entities;
+
+class User extends \Eloquent {
 
 	protected $table = 'users';
 
@@ -24,5 +26,6 @@ class User extends Eloquent {
 	{
 		return $this->hasMany('Post');
 	}*/
-
+	
+    
 }
