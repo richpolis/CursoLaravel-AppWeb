@@ -3,11 +3,12 @@
 namespace Richpolis\Repositories;
 
 use Richpolis\Entities\Category;
+use Richpolis\Repositories\BaseRepository;
 
-class CategoryRepository 
+class CategoryRepository extends BaseRepository
 {
-	public function find($id)
+	public function getModel()
     {
-        return Category::find($id);
+        return new Category;
     }    
 }

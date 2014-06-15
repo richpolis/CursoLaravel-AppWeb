@@ -6,7 +6,8 @@
 	"require-dev": {
 		"way/generators": "2.*",
 		"fzaninotto/faker": "v1.3.0",
-		"twitter/bootstrap": "v3.0.0"
+		"twitter/bootstrap": "v3.0.0",
+        "barryvdh/laravel-debugbar": "1.*"
 	},
 	"require": {
 		"laravel/framework": "4.1.*"

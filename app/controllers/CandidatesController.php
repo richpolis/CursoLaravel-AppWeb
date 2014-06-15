@@ -3,14 +3,18 @@
 
 
 use Richpolis\Repositories\CategoryRepository;
+use Richpolis\Repositories\CandidateRepository;
+
 
 class CandidatesController extends BaseController
 {
-    private $repository;
+    private $categoryRepo;
+    private $candidateRepo;
     
-    public function __construct(CategoryRepository $repository)
+    public function __construct(CategoryRepository $categoryRepo, CandidateRepository $candidateRepo)
     {
-        $this->repository = $repository;
+        $this->categoryRepo = $categoryRepo;
+        $this->candidateRepo = $candidateRepo;
     }
         
     /*
@@ -23,8 +27,25 @@ class CandidatesController extends BaseController
      */
     public function category($slug,$id)
     {
-        $category = $this->repository->find($id);
+        $category = $this->categoryRepo->find($id);
         
         return View::make('candidates/category',compact('category'));
     }
+    
+    /*
+     * Action show
+     * 
+	 * @params string $slug
+     * @params integer $id
+     * 
+     * @return Template: show.blade.html
+    */
+    
+    public function show($slug,$id)
+    {
+        $candidate = $this->candidateRepo->find($id);
+        
+        return View::make('candidates/show',compact('candidate'));
+    }
+    
 }

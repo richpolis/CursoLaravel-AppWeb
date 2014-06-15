@@ -12,4 +12,9 @@ class Category extends \Eloquent
         return $this->hasMany('Richpolis\Entities\Candidate');
     }
     
+    public function getPaginateCandidatesAttribute()
+    {
+        return Candidate::where('category_id',$this->id)->paginate();
+    }
+    
 }
