@@ -99,6 +99,11 @@ return array(
 	|
 	*/
 
-	'attributes' => array(),
+	'attributes' => array(
+    	'full_name' => 'nombre completo',
+        'email' => 'correo electronico',
+        'password'=> 'contraseña',
+        'password_confirmation' => 'repetir contraseña'
+    ),
 
 );

@@ -5,6 +5,21 @@ namespace Richpolis\Entities;
 class User extends \Eloquent {
 
 	protected $table = 'users';
+    
+    /*
+     * The attributes excluded from the model's JSON form
+     * 
+     * @var array
+    */
+    protected $hidden = array('password');
+    
+    protected $fillable = array('full_name','email','password');
+    
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password']= \Hash::make($value);
+    }
+    
 
 	public static function isLogged()
 	{

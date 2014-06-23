@@ -12,3 +12,7 @@ Route::get('candidates/{slug}/{id}',['as'=>'category','uses'=>'CandidatesControl
 
 // candidato-slug / user-id
 Route::get('{slug}/{id}',['as'=>'candidate','uses'=>'CandidatesController@show']);
+
+// registro de usuario
+Route::get('sign-up',['as'=>'sign_up','uses'=>'UsersController@signUp']);
+Route::post('sign-up',['as'=>'register','uses'=>'UsersController@register']);
