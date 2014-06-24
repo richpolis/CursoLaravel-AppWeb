@@ -2,6 +2,9 @@
 
 // composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
+use Richpolis\Entities\User;
+use Richpolis\Entities\Candidate;
+
 
 class CandidateTableSeeder extends Seeder {
 

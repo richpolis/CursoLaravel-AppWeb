@@ -7,6 +7,9 @@
                 <h1>Sign Up</h1>
                 {{Form::open(['route'=>'register','method'=>'POST','role'=>'form','novalidate'])}}
                 <p>
+                    {{ $fieldBuilder->input('text','full_name') }}
+
+
                 	<div class="form-group">
                     	{{Form::label('full_name','Nombre completo')}}
                         {{Form::text('full_name',null,['class'=>'form-control'])}}

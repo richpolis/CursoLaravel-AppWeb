@@ -15,7 +15,9 @@ class UsersController extends BaseController
     
 	public function signUp()
     {
-    	return View::make("users/sign-up");    
+        $fieldBuilder = new \Richpolis\Components\FieldBuilder();
+
+    	return View::make("users/sign-up",compact('fieldBuilder'));    
     } 
     
     public function register()

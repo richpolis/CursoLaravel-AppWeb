@@ -1,4 +1,7 @@
 <?php
+
+use Richpolis\Entities\Category;
+
 class CategoryTableSeeder extends Seeder {
 
 	public function run()
