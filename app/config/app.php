@@ -114,7 +114,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-        'Barryvdh\Debugbar\ServiceProvider',
+                'Barryvdh\Debugbar\ServiceProvider',
+                'Richpolis\Components\FieldServiceProvider',
 	),
 
 	/*
@@ -179,6 +180,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+                //Customs from application with @Sileence
+                'Field'           => 'Richpolis\Components\Field',  
         
 	),
 
