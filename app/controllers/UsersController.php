@@ -2,6 +2,7 @@
 
 use Richpolis\Entities\User;
 use Richpolis\Managers\RegisterManager;
+use Richpolis\Managers\AccountManager;
 use Richpolis\Repositories\CandidateRepository;
 
 class UsersController extends BaseController {
@@ -49,4 +50,25 @@ class UsersController extends BaseController {
         return Redirect::back()->withInput()->withErrors($manager->getErrors());
     }
 
+    public function account()
+    {
+        $user = Auth::user();
+        //return View::make('users/account')->with('user',$user); esta forma es la que usan en laravel mas frecuentemente.
+        return View::make('users/account',compact('user'));
+        
+    }
+    
+    public function updateAccount() 
+    {
+        $user = Auth::user();
+
+        $manager = new AccountManager($user, Input::all());
+
+        if ($manager->save()) {
+
+            return Redirect::route('home');
+        }
+
+        return Redirect::back()->withInput()->withErrors($manager->getErrors());
+    }
 }

@@ -34,18 +34,45 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Postulate</a>
         </div>
         <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
+          @if(Auth::check())
+           	<ul class="nav navbar-nav pull-right">
+               <li class="dropdown">
+                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                   		<span class="icon icon-wh i-profile"></span> {{Auth::user()->full_name}}
+                   	</a>
+                   <ul class="dropdown-menu">
+                       <li><a href="@{{route('profile')}}">Editar perfil</a></li>
+                       <li><a href="{{route('account')}}">Editar usuario</a></li>
+                       <li><a href="{{route('logout')}}">Salir</a></li>
+                   </ul>
+                </li>
+            </ul>
+          @else  
+          {{ Form::open(['route'=>'login','method'=>'POST','role'=>'form','class'=>'navbar-form navbar-right'])}}  
+          <!--form class="navbar-form navbar-right" role="form"-->
+            @if(Session::has('login_error'))
+            	<span class="label label-danger">Credenciales no validas</span>
+            @endif
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+              {{ Form::email('email',null,['class'=>'form-control','placeholder'=>'E-mail'])}}  
+              <!--input type="text" placeholder="Email" class="form-control"-->
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              {{ Form::password('password',['class'=>'form-control','placeholder'=>'Password'])}}  
+              <!--input type="password" placeholder="Password" class="form-control"-->
+            </div>
+            <div class="checkbox">
+                <label class="remember-me" style="color: white;">
+                	{{Form::checkbox('remember')}} 	Recordarme
+                </label>
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+          <!--/form-->
+          {{ Form::close() }}  
+          @endif  
         </div><!--/.navbar-collapse -->
       </div>
     </div>
