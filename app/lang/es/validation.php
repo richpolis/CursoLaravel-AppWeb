@@ -100,10 +100,15 @@ return array(
 	*/
 
 	'attributes' => array(
-    	'full_name' => 'nombre completo',
-        'email' => 'correo electronico',
-        'password'=> 'contraseña',
-        'password_confirmation' => 'repetir contraseña'
+    	'full_name' 	=> 'nombre completo',
+        'email' 		=> 'correo electronico',
+        'password'		=> 'contraseña',
+        'password_confirmation' => 'repetir contraseña',
+        'categoria_id' 	=> 'Categoria',
+        'website_url'	=>'URL web site',
+        'description'	=>'descripcion',
+        'job_type' 		=>'Tipo de trabajo',
+        'available' 	=>'Disponible',
     ),
 
 );

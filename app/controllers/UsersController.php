@@ -3,15 +3,20 @@
 use Richpolis\Entities\User;
 use Richpolis\Managers\RegisterManager;
 use Richpolis\Managers\AccountManager;
+use Richpolis\Managers\ProfileManager;
 use Richpolis\Repositories\CandidateRepository;
+use Richpolis\Repositories\CategoryRepository;
 
 class UsersController extends BaseController {
 
     protected $categoriaRepo;
+    protected $candidateRepo;
 
-    public function __construct(CandidateRepository $candidateRepo) 
+    public function __construct(CandidateRepository $candidateRepo, 
+                                CategoryRepository $categoriaRepo) 
     {
         $this->candidateRepo = $candidateRepo;
+        $this->categoriaRepo = $categoriaRepo;
     }
 
     public function signUp() 
@@ -63,6 +68,33 @@ class UsersController extends BaseController {
         $user = Auth::user();
 
         $manager = new AccountManager($user, Input::all());
+
+        if ($manager->save()) {
+
+            return Redirect::route('home');
+        }
+
+        return Redirect::back()->withInput()->withErrors($manager->getErrors());
+    }
+
+    public function profile()
+    {
+        $user = Auth::user();
+        $candidate = $user->candidate;
+        $categories = $this->categoriaRepo->getList();
+        $job_types = \Lang::get('utils.job_types');
+
+        return View::make('users/profile',compact('user','candidate','categories','job_types'));
+        
+    }
+    
+    public function updateProfile() 
+    {
+        $user = Auth::user();
+
+        $candidate = $user->candidate;
+
+        $manager = new ProfileManager($candidate, Input::all());
 
         if ($manager->save()) {
 

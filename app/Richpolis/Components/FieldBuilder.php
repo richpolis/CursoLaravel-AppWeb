@@ -54,11 +54,14 @@ class FieldBuilder {
     public function buildControl($type, $name, $value = null, $attributes = array(), $options = array()) {
         switch ($type) {
             case 'select':
+                $options = array(''=>'Seleccione') + $options;
                 return $this->form->select($name, $options, $value, $attributes);
             case 'password':
                 return $this->form->password($name, $attributes);
             case 'checkbox':
                 return $this->form->checkbox($name);
+            case 'textare':
+                return $this->form->textarea($name,$value,$attributes);
             default:
                 return $this->form->input($type, $name, $value, $attributes);
         }
@@ -95,6 +98,11 @@ class FieldBuilder {
 
     public function password($name, $attributes = array()) {
         return $this->input('password', $name, null, $attributes);
+    }
+
+    public function select($name,$options,$value = null, $attributes = array())
+    {
+        return $this->input('select',$name,$value,$attributes,$options);
     }
 
     public function __call($method, $params) {
