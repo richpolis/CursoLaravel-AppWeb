@@ -13,13 +13,13 @@
 
                         {{ Field::select('job_type',$job_types) }}
 
-                        {{ Field::select('categoria_id',$categories) }}
+                        {{ Field::select('category_id',$categories) }}
 
                         {{ Field::checkbox('available') }}
                         
                 </p>
                 <p>
-        			<input type="submit" value="Registrar" class="btn btn-success"/>        
+        			<input type="submit" value="Actualizar perfil" class="btn btn-success"/>        
                 </p>
                 {{Form::close()}}
             </div>

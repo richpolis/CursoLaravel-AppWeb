@@ -15,6 +15,11 @@ abstract class BaseManager
     }
     
     abstract public function getRules();
+
+    public function prepareData($data)
+    {
+        return $data;
+    }
     
     public function isValid()
     {
@@ -41,7 +46,7 @@ abstract class BaseManager
             return false;
         }
         
-        $this->entity->fill($this->data);
+        $this->entity->fill($this->prepareData($this->data));
         
         $this->entity->save();
         

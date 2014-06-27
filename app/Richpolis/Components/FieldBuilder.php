@@ -60,7 +60,7 @@ class FieldBuilder {
                 return $this->form->password($name, $attributes);
             case 'checkbox':
                 return $this->form->checkbox($name);
-            case 'textare':
+            case 'textarea':
                 return $this->form->textarea($name,$value,$attributes);
             default:
                 return $this->form->input($type, $name, $value, $attributes);

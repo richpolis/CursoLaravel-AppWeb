@@ -4,7 +4,7 @@ namespace Richpolis\Entities;
 
 class Candidate extends \Eloquent 
 {
-	protected $fillable = [];
+	protected $fillable = ['website_url','description','job_type','category_id','available'];
     protected $perPage = 5;
 	
     public function user()

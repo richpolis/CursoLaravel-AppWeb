@@ -104,7 +104,7 @@ return array(
         'email' 		=> 'correo electronico',
         'password'		=> 'contraseña',
         'password_confirmation' => 'repetir contraseña',
-        'categoria_id' 	=> 'Categoria',
+        'category_id' 	=> 'Categoria',
         'website_url'	=>'URL web site',
         'description'	=>'descripcion',
         'job_type' 		=>'Tipo de trabajo',

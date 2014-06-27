@@ -92,7 +92,7 @@ class UsersController extends BaseController {
     {
         $user = Auth::user();
 
-        $candidate = $user->candidate;
+        $candidate = $user->getCandidate();
 
         $manager = new ProfileManager($candidate, Input::all());
 
